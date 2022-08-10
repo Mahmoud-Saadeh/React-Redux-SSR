@@ -3,19 +3,26 @@
   "version": "1.0.0",
   "description": "Node.js example server starter project",
   "scripts": {
-    "build:client": "esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx",
-    "build:server": "esbuild server/server.jsx --bundle --outfile=build/server.js --platform=node",
+    "build:client": "esbuild src/client/Index.jsx --bundle --outfile=dist/bundle.js --loader:.js=jsx --watch",
+    "build:server": "esbuild src/server/server.jsx --bundle --outfile=build/server.js --platform=node --watch",
     "build": "npm run build:client && npm run build:server",
-    "start": "node ./build/server.js"
+    "start": "nodemon ./build/server.js"
   },
   "dependencies": {
-    "esbuild": "0.14.13",
-    "express": "4.17.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
+    "esbuild": "^0.14.51",
+    "express": "^4.18.1",
+    "http-proxy-middleware": "^2.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "serialize-javascript": "^6.0.0"
   },
+  "keywords": [],
   "devDependencies": {
-    "nodemon": "1.18.4"
-  },
-  "keywords": []
+    "nodemon": "^2.0.19"
+  }
 }
